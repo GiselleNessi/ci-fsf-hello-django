@@ -12,181 +12,191 @@
   </head>
 
   <body>
-       <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="columns">
-          <div class="column is-12">
-            <div class="container content">
-              <i class="is-large fab fa-discord"></i>
-              <i class="is-large fas fa-code"></i>
-              <h1 class="title">Code <em>All</em> The Things</h1>
-              <h3 class="subtitle">
-              Collection of code goodies for next-level dev
-              </h3>
-              <a href="https://github.com/BulmaTemplates/bulma-templates" target="_blank" class="button is-primary is-large">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Github</span>
-              </a>
-            </div>
-          </div>
+
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
         </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item">
+                Home
+            </a>
+
+            <a class="navbar-item">
+                Documentation
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                More
+                </a>
+
+                <div class="navbar-dropdown">
+                <a class="navbar-item">
+                    About
+                </a>
+                <a class="navbar-item">
+                    Jobs
+                </a>
+                <a class="navbar-item">
+                    Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                    Report an issue
+                </a>
+                </div>
+            </div>
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                <a class="button is-primary">
+                    <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                    Log in
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </nav>
+
+       <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="columns">
+                <div class="column is-12">
+                    <div class="container content">
+                    <i class="is-large fab fa-discord"></i>
+                    <i class="is-large fas fa-code"></i>
+                    <h1 class="title">Online <em>to-do</em> list</h1>
+                    <h3 class="subtitle">
+                    tasks all day
+                    </h3>
+                    <a href="https://github.com/BulmaTemplates/bulma-templates" target="_blank" class="button is-primary is-large">
+                        <span class="icon">
+                        <i class="fab fa-github"></i>
+                        </span>
+                        <span>Github</span>
+                    </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3">
+        <aside class="is-medium menu">
+          <p class="menu-label">
+            New Variables
+          </p>
+          <ul class="menu-list">
+            <li><a href="#const">const</a></li>
+            <li><a href="#let">let</a></li>
+          </ul>
+          <p class="menu-label">
+            More to come...
+          </p>
+          <ul class="menu-list">
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">ipsum</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">ipsum</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">ipsum</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">ipsum</a></li>
+          </ul>
+        </aside>
       </div>
-    </section>
-
-
-
-
-  <section class="section">
-    <div class="container is-fluid">
-      <h1 class="title">
-        Things I need to do:
-      </h1>
 
       <div class="column is-9">
-            <div class="content is-medium">
+        <div class="content is-medium">
+          <h3 class="title is-3">Things I need to do:</h3>
           <h3 class="title is-3">¯\_(ツ)_/¯</h3>
-              <div class="box">
-                <h4 id="const" class="title is-3">Edit a Todo item:</h4>
-                <article class="message is-primary">
+          <div class="box">
+            <h4 id="const" class="title is-3">const</h4>
+
+            <article class="message is-primary">
                   <span class="icon has-text-primary">
                   <i class="fab fa-js"></i>
                   </span>
                   <div class="message-body">
-                     <table>
-      {% for item in items %}
-      <tr>
-        {% if item.done %}
-            <td><strike>{{ item.name }}</strike></td>
-        {% else %}
-            <td>{{ item.name }}</td>
-        {% endif %}
-        <td>
-            <a href="/toggle/{{ item.id }}">
-            <button>Toggle</button>
-            </a>
-        </td>
-        <td>
-            <a href="/edit/{{ item.id }}">
-            <button>Edit</button>
-            </a>
-        </td>
-        <td>
-            <a href="/delete/{{ item.id }}">
-            <button>Delete</button>
-            </a>
-        </td>
-      </tr>
-      {% empty %}
-      <tr><td>You have nothing to do.</td></tr>
-      {% endfor %}
-    </table>
+                        <table>
+                        {% for item in items %}
+                        <tr>
+                            {% if item.done %}
+                                <td><strike>{{ item.name }}</strike></td>
+                            {% else %}
+                                <td>{{ item.name }}</td>
+                            {% endif %}
+                            <td>
+                                <a href="/toggle/{{ item.id }}">
+                                <button>Toggle</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/edit/{{ item.id }}">
+                                <button>Edit</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/delete/{{ item.id }}">
+                                <button>Delete</button>
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td>You have nothing to do.</td></tr>
+                        {% endfor %}
+                        </table>
 
+                        <form method="POST">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        </form>      
 
+                    </div>
+                    </article>
 
-      <form method="POST">
-    {% csrf_token %}
-      {{ form.as_p }}
-    
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
+            <pre><code class="language-javascript"><a href="/add" class="button is-primary is-large">
+                        <span>Add an item</span>
+            </a></code></pre>
+
+            
+
+          </div>
+         
         </div>
-        <footer class="card-footer">
-            <div>
-                <p class="control">
-                    <a href="/add">Add an item</a>
-                </p>
-            </div>
-        </footer>
-        </form>
-                  </div>
-                </article>
-              <pre><code class="language-javascript">
-              
-              
-              </code></pre>
-            </div>
-
       </div>
     </div>
+  </div>
+</section>
+
+  
    
     </div>
-
-    <div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      Edit a Todo item:
-    </p>
-    <a href="#" class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </a>
-  </header>
-  <div class="card-content">
-    <div class="content">
-
-
-     <table>
-      {% for item in items %}
-      <tr>
-        {% if item.done %}
-            <td><strike>{{ item.name }}</strike></td>
-        {% else %}
-            <td>{{ item.name }}</td>
-        {% endif %}
-        <td>
-            <a href="/toggle/{{ item.id }}">
-            <button>Toggle</button>
-            </a>
-        </td>
-        <td>
-            <a href="/edit/{{ item.id }}">
-            <button>Edit</button>
-            </a>
-        </td>
-        <td>
-            <a href="/delete/{{ item.id }}">
-            <button>Delete</button>
-            </a>
-        </td>
-      </tr>
-      {% empty %}
-      <tr><td>You have nothing to do.</td></tr>
-      {% endfor %}
-    </table>
-
-
-
-      <form method="POST">
-    {% csrf_token %}
-      {{ form.as_p }}
-    
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
     </div>
-        </div>
-        <footer class="card-footer">
-            <div>
-                <p class="control">
-                    <a href="/add">Add an item</a>
-                </p>
-            </div>
-        </footer>
-        </form>
-        </div>
 
-     
    
-    
-
-    
-
-
-
-
 
     <footer class="footer">
         <div class="content has-text-centered">
@@ -196,7 +206,7 @@
         </div>
     </footer>
 
-  </section>
+
   </body>
 </html>
 
